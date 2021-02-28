@@ -1,0 +1,424 @@
+$main : #25365d;
+$optional : #bbd8ff;
+$black : #5a5a5a;
+
+@mixin flex($align, $justify, $direction){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@font-face{
+    font-family: 'OpenSans';
+    src: url('/assets/font/OpenSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'BebasNeue';
+    src: url('/assets/font/BebasNeue\ Bold.otf');
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: 'OpenSans', sans-serif;
+}
+
+// COMPONENT
+
+.title{
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 7.2rem;
+    color: $main;
+}
+
+.py{
+    padding: 6rem 0 !important;
+}
+
+.btn-main{
+    background: $main;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 10rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'OpenSans', sans-serif;
+    padding: 0.5rem 3rem !important;
+    letter-spacing: 0.1rem;
+
+    i{
+        margin-right: 0.5rem;
+    }
+
+    &:hover{
+        color: #fff;
+        background: #25355a; 
+    }
+}
+
+.desc{
+    font-size: 1.6rem;
+    color: $black;
+}
+
+.scroll{
+    background: #0293dc;
+}
+
+.fixed-nav-link{
+    
+    display: block;
+    width: 100%;
+    visibility: hidden;
+    height: 57.25px;
+    margin-top: -57.25px;
+}
+
+// NAVBAR 
+
+.navbar{
+    padding: 1rem 0;
+    
+    .navbar-nav{
+        .nav-item{
+            font-size: 1.8rem;
+            margin-left: 2rem;
+
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// HEADER
+
+.header{
+    background: url('/assets/img/home.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .container{
+        min-height: 80rem;
+        @include flex(center, flex-start, column);
+        text-align: center;
+        .title{
+            margin-top: 8rem;
+            font-size: 9.1rem;
+            color: #fff;
+        }
+
+        .desc{
+            font-size: 2.4rem;
+            margin-bottom: 5rem;
+            color: $optional;
+        }
+    }
+}
+
+// DOWNLOAD
+
+.download{
+    position: relative;
+    margin-top: -15rem;
+
+    &::before{
+        content: attr(text);
+        color: #fff;
+        font-family: 'BebasNeue', sans-serif;
+        text-align: center;
+        font-size: 20rem;
+        width: 100%;
+        position: absolute;
+        top: -6rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .row{
+        align-items: flex-end;
+
+        .title{
+            margin-bottom: 3rem;
+        }
+
+        .desc{
+            margin-bottom: 3rem;
+        }
+
+        .table{
+            font-size: 1.6rem;
+            color: #93aac9;
+            margin-bottom: 5rem;
+            i{
+                color: #ff2b6a;
+            }
+
+            td{
+                padding: 0.25rem;
+            }
+        }
+
+        .img-fluid{
+            margin-left: -10rem;
+        }
+    }
+}
+
+
+// FEATURES
+
+.features{
+    .features-box{
+        background: #f7f9fb;
+
+        .title{
+            font-size: 2.2rem;
+            font-family: 'OpenSans', sans-serif;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .item{
+            @include flex(flex-start , center, row);
+            margin: 2rem 0;
+        }
+
+        .icon{
+            width: 8rem;
+            margin-right: 2rem;
+            img{
+                max-width: 100%;
+                max-height: 5rem;
+            }
+        }
+    }
+
+    .features-img{
+        .container{
+            @include flex(center, center, column);
+
+            div{
+                width: 70%;
+                margin-top: 5rem;
+            }
+        }
+    }
+}
+
+// PLANS
+
+.plans{
+    text-align: center;
+    background: #f7f9fb;
+    
+    .title{
+        margin-bottom: 3rem;
+    }
+
+    .row{
+        margin-top: 5rem;
+        .items{
+            @include flex(center, space-between, column);
+            background: #fff;
+            padding: 2rem 1rem ;
+            height: 25rem;
+
+            .plan-name{
+                font-size: 1.8rem;
+            }
+
+            .plan-dollar{
+                font-size: 4rem;
+                font-weight: bold;
+            }
+
+            .plan-price{
+                font-size: 7.2rem;
+                font-weight: bold;
+            }
+
+            .plan-duration{
+                font-size: 2.2rem;
+                color: $black;
+            }
+
+            .desc{
+                color: $black;
+            }
+        }
+    }
+}
+
+// CONTACT 
+
+.contact{
+    background: #f7f9fb;
+    .container{
+        text-align: center;
+    }
+
+    h3{
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin: 2rem 0;
+    }
+
+    .desc{
+        font-size: 1.6rem;
+        color: $black;
+        width: 40rem;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+
+    .row{
+        width: 50rem;
+        margin: 0 auto;
+        font-weight: bold;
+    }
+
+}
+
+// FOOTER
+
+.footer{
+    background: url('/assets/img/footer.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .container{
+        text-align: center;
+        height: 50rem;
+        @include flex(center, center, column);
+    }
+
+    .title{
+        margin-bottom: 3rem;
+    }
+
+    .desc{
+        margin-bottom: 5rem;
+    }
+}
+
+@media (max-width: 1050px){
+    .download::before{
+        font-size: 15rem;
+        top: 0;
+    }
+}
+
+@media (max-width : 991px){
+
+    .title{
+        font-size: 5rem;
+    }
+
+    .desc{
+        font-size: 1.4rem;
+    }
+
+    .header{
+        .container{
+            .title{
+                font-size: 6rem;
+            }
+
+            .desc{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .download{
+        margin-top: -10rem;
+
+        &::before{
+            font-size: 10rem;
+        }
+
+        .row{
+            align-items: center;
+
+            .img-fluid{
+                margin-left: 0;
+            }
+        }
+    }
+
+    .features .features-img .container div{
+        width: 100%;
+    }
+
+    .plans .row .items{
+        margin-bottom: 5rem;
+    }
+
+    .contact {
+        .desc{
+            width: 90%;
+        }
+
+        .row{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width : 767px){
+    .navbar{
+        background: #0293dc; 
+
+        .navbar-brand{
+            img{
+                width: 8rem;
+            }
+        }
+
+        .navbar-nav{
+            padding: 2rem 0;
+            .nav-item{
+                &:first-child{
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : 575px){
+    .title{
+        font-size: 4rem;
+    }
+
+    .navbar{
+        padding: 1rem;
+    }
+
+    .download{
+        &::before{
+            display: none;
+        }
+
+        .row{
+            flex-direction: column-reverse;
+
+            .img-fluid{
+                margin-bottom: 5rem;
+            }
+        }
+    }
+}
