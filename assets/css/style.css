@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'OpenSans';
-  src: url("assets/font/OpenSans-Regular.ttf");
+  src: url("../assets/font/OpenSans-Regular.ttf");
 }
 
 @font-face {
   font-family: 'BebasNeue';
-  src: url("assets/font/BebasNeue Bold.otf");
+  src: url("../assets/font/BebasNeue Bold.otf");
 }
 
 *,
@@ -90,7 +90,7 @@ body {
 }
 
 .header {
-  background: url("assets/img/home.png");
+  background: url("../assets/img/home.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -319,7 +319,7 @@ body {
 }
 
 .footer {
-  background: url("assets/img/footer.jpg");
+  background: url("../assets/img/footer.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
